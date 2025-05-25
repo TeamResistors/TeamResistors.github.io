@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HALorHAR</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <header>
@@ -14,12 +15,42 @@
             <a href="/about">О нас</a>
         </div>
     </header>
-    <div id="center">
-        <h1>HALorHAR</h1>
-        <p>Программа для теста на знание корана: ответьте на вопросы - халяль это или харам. Советую не ошибаться...</p>
-        <img src="/img/halorhar_logo.jpg" alt="halorhar logo">
-        <a href="/README_HALorHAR.md">Подробнее...</a>
-        <a href="https://github.com/TeamResistors/HALorHAR">Гитхаб-репозиторий проэкта</a>
-    </div>
+    <div id="center"></div>
+    <script>
+    const markdownText = `HALorHAR
+========
+
+![HALorHAR logo!](/img/halorhar_logo.jpg "HALorHAL logo")
+
+## Читал коран? А ну-ка проверим! 
+Тебе предстоит пройти небольшой тест, который проверит твое знание корана! Будет даваться вещь, а ты будешь отвечать халяль это или харам. Подсказка:
+### Халяль хорошо Харам плохо
+Вопросы будут каждый раз сложнее и интереснее! И не смей ошибаться... Аллах. Никогда. Никого. Не. Простит...
+
+## Сертификаты
+
+Данная програма не вирус и не содежит вирусов. Вот наш сертификат. Вы же верите DrWeb?
+
+![DrWeb sertificate!](/img/drweb_sertificat.jpg "DrWeb sertificate")
+
+
+Это на 100%      
+![halal!](/img/halal.jpg "halal")
+
+## Дисклеймер
+Данная програма создана в развлекательных целях и не несет целей оскорбить что-то или кого-либо и не наносит сильного вреда вашему компьютеру.
+
+### -- Team Resistors
+Мы пророки аллаха, не сомневайтесь
+
+每5秒钟，一个孩子就会因为你而死亡，而你甚至不知道它。
+Sizce Rum ve Ermeni soykırımı boşuna mı yapıldı?
+
+Ответы есть на вики. Так же для лучшего прохождения расстелите коврик и начните читать намаз.
+`;
+    
+    document.getElementById('center').innerHTML = 
+    marked.parse(markdownText);
+    </script>
 </body>
 </html>
