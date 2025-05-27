@@ -5,3 +5,54 @@ body {
     background-repeat: no-repeat;
     height: 100vh;
 }
+
+* {
+    color: white;
+    font-family: "WDXL Lubrifont TC";
+}
+
+header {
+    border-bottom: 1px white solid;
+}
+header * {
+    display: inline;
+    font-size: 40px;
+}
+
+#header-right {
+    float: right;
+}
+
+button {
+    background: #5EFD2D;
+    background: linear-gradient(0deg,rgba(94, 253, 45, 1) 0%, rgba(94, 253, 45, 0.27) 100%);
+    border-radius: 20px;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+}
+
+#dep {
+    font-size: 25px;
+    width: 250px;
+    margin-bottom: 30px;
+}
+
+#root {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+#dep-money {
+    color: black;
+    margin: 30px;
+    font-size: 20px;
+    width: 250px;
+}
+
+#output {
+    font-size: 50px;
+}
