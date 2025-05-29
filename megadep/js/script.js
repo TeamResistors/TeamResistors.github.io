@@ -60,6 +60,40 @@ async function dep() {
         if (!isNaN(depMoney)) {
             if (depMoney <= money) {
                 if (depMoney >= 500) {
+                    if (money <= 1000) {
+                        const oldBackground = document.body.style.background;
+                        const oldColor = document.body.style.color;
+                        document.body.style.background = 'black';
+                        document.body.style.backgroundImage = 'none';
+                        document.body.style.color = 'red';
+                        var depbtn = document.getElementById('dep');
+                        depbtn.style.background = 'black'
+                        var header = document.querySelector('header');
+                        header.style.borderBottomColor = 'red';
+                        const allTextElements = document.querySelectorAll('*');
+                        const originalColors = [];
+                        allTextElements.forEach(el => {
+                            originalColors.push(el.style.color);
+                            el.style.color = 'red';
+                        });
+                        if (money > 750) {
+                            setTimeout(() => {
+                                document.body.style.background = '';
+                                document.body.style.backgroundImage = 'url("/megadep/img/background.jpg")';
+                                document.body.style.backgroundSize = 'cover';
+                                document.body.style.backgroundPosition = 'center';
+                                document.body.style.backgroundRepeat = 'no-repeat';
+                                document.body.style.color = oldColor;
+                                header.style.borderBottomColor = 'white';
+                                depbtn.style.background = '#5EFD2D;';
+                                depbtn.style.background = 'linear-gradient(0deg,rgba(94, 253, 45, 1) 0%, rgba(94, 253, 45, 0.27) 100%);'
+                                allTextElements.forEach((el, index) => {
+                                    el.style.color = originalColors[index];
+                                    depbtn.style.color = 'red';
+                                });
+                            }, 1000);
+                        }
+                    }
                     setmoney(money - depMoney)
                     for (let i = 0; i < 50; i++) {
                         var outputMoney = calculate(depMoney);
