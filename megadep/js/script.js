@@ -1,8 +1,39 @@
-var money = 10000;
-setmoney(10000)
+function getCookie(name) {
+  const cookies = document.cookie.split('; ');
+  for (const cookie of cookies) {
+    const [cookieName, cookieValue] = cookie.split('=');
+    if (cookieName === name) {
+      return decodeURIComponent(cookieValue);
+    }
+  }
+  return null;
+}
+
+function setCookie(name, value, daysToExpire = 300) {
+    const date = new Date();
+    date.setTime(date.getTime() + (daysToExpire * 24 * 60 * 60 * 1000));
+    const expires = `expires=${date.toUTCString()}`;
+    document.cookie = `${name}=${encodeURIComponent(value)}; ${expires}; path=/`;
+}
+
+var money = 0;
+
+const savedMoney = getCookie('money');
+if (savedMoney === null) {
+    setmoney(10000);
+} else {
+    const moneyValue = parseInt(savedMoney);
+    if (!isNaN(moneyValue)) {
+        setmoney(moneyValue);
+    } else {
+        setmoney(10000);
+    }
+}
+
 
 function setmoney(newmoney) {
     money = newmoney;
+    setCookie('money', money)
     document.getElementById('money').innerHTML = money + "$";
 }
 
@@ -39,7 +70,7 @@ async function dep() {
                         await new Promise(r => setTimeout(r, 200));
                     }
                 } else {
-                    alert('Минимальная сумма депа: 500');
+                    alert('Минимальная сумма депа: 500.');
                 }             
             } else {
                 alert('Сумма депа не должна превышать количество ваших денег');

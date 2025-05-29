@@ -13,14 +13,18 @@ body {
 
 header {
     border-bottom: 1px white solid;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 header * {
     display: inline;
     font-size: 40px;
+    margin: 0;
 }
 
 #header-right {
-    float: right;
+    margin-right: 10px;
 }
 
 button {
